@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "Maverick",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    { "type": "chip-LM35", "id": "chip1", "top": 234.36, "left": 229.47, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -282, "left": -73, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led2", "top": -282, "left": -15.4, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -282,
+      "left": -178.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -285.4,
+      "left": 47.4,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "chip1:OUT", "uno:A0", "blue", [ "h0" ] ],
+    [ "chip1:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "chip1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "led1:A", "uno:4", "green", [ "v0" ] ],
+    [ "led1:C", "uno:GND.2", "green", [ "v0" ] ],
+    [ "led2:A", "uno:5", "green", [ "v249.6", "h201.6" ] ],
+    [ "led2:C", "uno:GND.2", "green", [ "v0" ] ],
+    [ "led3:A", "uno:6", "green", [ "v0" ] ],
+    [ "led3:C", "uno:GND.3", "green", [ "v0" ] ],
+    [ "ntc1:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "ntc1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "ntc1:OUT", "uno:A0", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
